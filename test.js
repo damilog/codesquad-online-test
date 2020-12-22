@@ -18,7 +18,6 @@ function handleInputWord(word, number, direction) {
       let lastItem = wordList.pop();
       wordList.unshift(lastItem);
       result = wordList.join("");
-      //console.log(result);
     }
   } else if (
     (number < 0 && direction === "R") ||
@@ -28,19 +27,18 @@ function handleInputWord(word, number, direction) {
       let firstItem = wordList.shift();
       wordList.push(firstItem);
       result = wordList.join("");
-      //console.log(result);
     }
   }
   return result;
 }
-
+/*---지금부터 테스트 코드 입니다----*/
 function testCode() {
   const testResult = handleInputWord("apple", 3, "L");
   const expectedResult = "leapp";
-  const wrongResult = "leabp";
 
   if (testResult !== expectedResult) {
     throw new Error(`${testResult} is not equal to ${expectedResult}`);
   }
 }
+
 testCode();
